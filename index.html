@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WASTRA — Koleksi Batik Nusantara 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1a33;--panel:#16264a;--panel2:#1d3260;--gold:#d9b25f;--cream:#f1e6cc;--soga:#8a4b22;--mute:#9fb0d0;--r:28px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'DM Mono',ui-monospace,monospace;font-size:13px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;background:radial-gradient(circle at 20% 10%,#24407a 0,transparent 45%),radial-gradient(circle at 90% 80%,#4a2a14 0,transparent 40%)}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.display{font-family:'Bebas Neue','Arial Narrow',Impact,sans-serif;font-weight:400;line-height:.9;letter-spacing:.01em}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.frame{margin:24px auto;width:min(1240px,96vw);background:var(--panel);overflow:hidden}
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 40px;position:relative;z-index:5}
+nav .logo{font-size:30px}
+nav ul{display:flex;gap:34px;list-style:none;color:var(--mute)}
+nav ul a:hover{color:var(--gold)}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--cream);border-radius:99px;padding:6px 18px;background:transparent;cursor:pointer;transition:.3s}
+.pill:hover{background:var(--cream);color:var(--bg)}
+/* hero */
+.hero{position:relative;min-height:640px;padding:30px 40px 50px;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;background:linear-gradient(135deg,#1b3366,#0e1a33 70%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.14;background-image:var(--kawung);background-size:120px}
+.hero-text{position:relative;z-index:2}
+.hero h1{font-size:clamp(64px,9vw,128px)}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.15s}
+@keyframes up{to{transform:none}}
+.opt{display:flex;gap:14px;align-items:center;margin-top:30px;color:var(--mute)}
+.opt b{font-weight:500;width:64px}
+.chip{border:1px solid #3d5388;background:none;padding:2px 12px;cursor:pointer;transition:.25s;color:var(--cream)}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.buy{display:flex;align-items:center;gap:22px;margin-top:38px}
+.octo{width:92px;height:92px;border:0;cursor:pointer;background:var(--gold);color:var(--bg);font-size:30px;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.octo:hover{transform:rotate(45deg) scale(1.06)}
+.buy small{display:block;color:var(--mute)}
+.buy strong{font-size:34px;font-weight:400}
+.hero-art{position:relative;z-index:1;display:grid;place-items:center}
+.hero-art .big{position:absolute;font-size:clamp(120px,19vw,280px);color:transparent;-webkit-text-stroke:1px rgba(217,178,95,.35);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+#heroShirt{width:min(520px,100%);filter:drop-shadow(0 40px 50px rgba(0,0,0,.55));animation:float 6s ease-in-out infinite}
+#heroShirt svg{width:100%;height:auto;display:block}
+@keyframes float{50%{transform:translateY(-14px) rotate(-1deg)}}
+/* section */
+section{padding:70px 40px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.head h2{font-size:clamp(44px,6vw,78px)}
+.head p{max-width:340px;color:var(--mute)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{cursor:pointer}
+.card .img{aspect-ratio:3/3.6;background:#b8c6df;display:grid;place-items:center;padding:14px;clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),calc(100% - 30px) 100%,0 100%);transition:background .4s}
+.card .img svg{width:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .img{background:#d6bf86}
+.card:hover .img svg{transform:scale(1.07) rotate(-2deg)}
+.card h3{margin-top:14px;font-size:24px}
+.card p{color:var(--mute)}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.dots{display:flex;gap:6px}
+.dots i{width:12px;height:12px;border-radius:50%;border:1px solid var(--cream)}
+.feature{grid-column:span 2;background:var(--panel2);padding:30px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 100%,30px 100%,0 calc(100% - 30px))}
+.feature::before{content:"";position:absolute;inset:0;opacity:.22;background-image:var(--kawung);background-size:90px}
+.feature>*{position:relative}
+.feature h3{font-size:clamp(48px,6vw,84px);color:var(--gold)}
+/* story */
+.story{position:relative;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,#0e1a33,#2b1a10);overflow:hidden}
+.story::before{content:"";position:absolute;inset:0;opacity:.16;background-image:var(--parang);background-size:140px}
+.story .giant{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-size:clamp(160px,32vw,460px);color:transparent;-webkit-text-stroke:2px var(--gold);opacity:.55;line-height:.8}
+.story h2{position:relative;font-size:clamp(44px,6.5vw,96px)}
+.story p{position:relative;margin-top:18px;max-width:380px;color:var(--mute)}
+footer{padding:26px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mute);border-top:1px solid #2c4073}
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.reveal.left{transform:translateX(-50px)}.reveal.left.in{transform:none}
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:rgba(5,10,24,.8);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:.35s}
+.modal.open{opacity:1;visibility:visible}
+.sheet{width:min(920px,100%);max-height:94vh;overflow:auto;background:var(--panel);display:grid;grid-template-columns:.8fr 1.2fr;transform:translateY(30px) scale(.97);transition:.45s cubic-bezier(.2,.8,.2,1);clip-path:polygon(0 0,100% 0,100% 100%,30px 100%,0 calc(100% - 30px))}
+.modal.open .sheet{transform:none}
+.side{background:var(--panel2);padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.side svg{width:100%}
+.side h3{font-size:42px}
+form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:flex;flex-direction:column;gap:4px;color:var(--mute)}
+.full{grid-column:1/-1}
+input,select,textarea{background:#0e1a33;border:1px solid #3d5388;padding:10px 12px;border-radius:0;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{resize:vertical;min-height:70px}
+.err{color:#ff9d8a;min-height:18px}
+.total{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #3d5388;padding-top:14px}
+.total strong{font-size:34px;font-weight:400;color:var(--gold)}
+.send{border:0;background:var(--gold);color:var(--bg);padding:14px;cursor:pointer;font-weight:500;transition:.3s}
+.send:hover{background:var(--cream)}.send:disabled{opacity:.6;cursor:wait}
+.x{position:absolute;top:18px;right:22px;z-index:2}
+.done{padding:50px 30px;text-align:center;grid-column:1/-1;display:none}
+.done h3{font-size:64px;color:var(--gold)}
+.sheet.ok form,.sheet.ok .side{display:none}.sheet.ok .done{display:block}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:var(--gold);color:var(--bg);padding:12px 22px;z-index:60;transition:.5s cubic-bezier(.2,.8,.2,1)}
+.toast.show{transform:translate(-50%,0)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;padding:20px 22px 40px}nav{padding:18px 22px}nav ul{display:none}section{padding:50px 22px}.sheet{grid-template-columns:1fr}.side svg{max-width:200px;margin:0 auto}footer{padding:22px}}
+@media(max-width:520px){.grid{gap:14px}.feature{grid-column:span 2}form{grid-template-columns:1fr}.card h3{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.reveal{opacity:1;transform:none}.hero h1 span i{transform:none}}
+</style>
+</head>
+<body>
+<main class="frame">
+  <nav>
+    <a href="#top" class="logo display">WASTRA</a>
+    <ul><li><a href="#koleksi">Koleksi</a></li><li><a href="#cerita">Cerita</a></li><li><a href="#koleksi">Pesan</a></li></ul>
+    <button class="pill" id="navBuy">Pesan sekarang</button>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-text">
+      <h1 class="display"><span><i>Koleksi</i></span><span><i>Nusantara 01</i></span></h1>
+      <div class="opt reveal" style="--d:.5s"><b>Ukuran</b><span id="heroSize"></span></div>
+      <div class="opt reveal" style="--d:.6s"><b>Warna</b><span id="heroColor"></span></div>
+      <div class="buy reveal" style="--d:.7s">
+        <button class="octo" id="heroBuy" aria-label="Pesan Kemeja Kawung Sultan">↗</button>
+        <div><small>Kawung Sultan</small><strong class="display" id="heroPrice"></strong></div>
+      </div>
+    </div>
+    <div class="hero-art"><div class="big display" aria-hidden="true">BATIK</div><div id="heroShirt"></div></div>
+  </header>
+
+  <section id="koleksi">
+    <div class="head">
+      <h2 class="display reveal">Koleksi baru</h2>
+      <p class="reveal" style="--d:.1s">Batik tulis dan cap dari pengrajin Jawa. Pilih motif, isi data pemesanan, dan pesanan Anda tercatat langsung.</p>
+    </div>
+    <div class="filters reveal" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="story" id="cerita">
+    <div class="giant display" aria-hidden="true">BATIK</div>
+    <h2 class="display reveal left">Dibuat dengan tangan<br>dipakai dengan bangga<br>diwariskan lintas generasi</h2>
+    <p class="reveal" style="--d:.15s">Setiap motif membawa makna: Parang untuk keteguhan, Kawung untuk kesucian, Mega Mendung untuk ketenangan.</p>
+  </section>
+  <footer><span>© 2026 WASTRA — Simulasi toko batik</span><span>Data pesanan tersimpan di Google Spreadsheet</span></footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet" id="sheet">
+    <button class="pill x" id="close" type="button">Tutup</button>
+    <div class="side"><div id="mArt"></div><div><h3 class="display" id="mTitle"></h3><p id="mType"></p></div></div>
+    <form id="form" novalidate>
+      <label>Nama lengkap<input name="nama" required autocomplete="name"></label>
+      <label>No. WhatsApp<input name="hp" type="tel" required autocomplete="tel" placeholder="08xxxxxxxxxx"></label>
+      <label class="full">Email (opsional)<input name="email" type="email" autocomplete="email"></label>
+      <label class="full">Alamat pengiriman<textarea name="alamat" required autocomplete="street-address"></textarea></label>
+      <label>Ukuran<select name="ukuran" id="fSize"></select></label>
+      <label>Warna<select name="warna" id="fColor"></select></label>
+      <label>Jumlah<input name="jumlah" id="fQty" type="number" min="1" max="20" value="1"></label>
+      <label>Produk<select name="produk" id="fProd"></select></label>
+      <label class="full">Catatan (opsional)<input name="catatan"></label>
+      <div class="err full" id="err" role="alert"></div>
+      <div class="total full"><span>Total bayar</span><strong class="display" id="fTotal"></strong></div>
+      <button class="send full" id="send" type="submit">Kirim pesanan</button>
+    </form>
+    <div class="done"><h3 class="display">Pesanan terkirim</h3><p>Nomor pesanan <b id="oid"></b>.<br>Kami akan menghubungi Anda lewat WhatsApp.</p><br><button class="pill" id="again" type="button">Pesan lagi</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
